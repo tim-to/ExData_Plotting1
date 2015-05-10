@@ -12,7 +12,8 @@ household$Date <-strptime(paste(household$Date, household$Time, sep=" "), format
 
 # plot the data to a png device
 png(filename="plot4.png",width=480,height=480)
-par(mfrow =c(2,2))
+# set the multipanel to 2 x 2 grid and give the left side margin more space to display y axis lables
+par(mfrow =c(2,2), oma=c(0,1,0,0))
 with(household, {
   #base plot #1 Global Active power
   plot(Date, Global_active_power, type="l", xlab="", ylab="Global Active Power")
